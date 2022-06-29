@@ -1,6 +1,5 @@
 import React from "react";
 import { Movie } from "../typings";
-import TrendingTN from "./TrendingTN";
 
 interface Props {
   Data: Movie[];

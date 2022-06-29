@@ -8,21 +8,35 @@ import TrendingRow from "../components/TrendingRow";
 import Data from "../data.json";
 import { Movie } from "../typings";
 import { v4 as uuid } from "uuid";
+import { Dispatch, SetStateAction, useState } from "react";
+import HomePage from "../components/HomePage";
+import MoviePage from "../components/MoviePage";
+import TvSeriesPage from "../components/TvSeriesPage";
 
-interface Props {
+export interface Props {
   Data: Movie[];
 }
 
+export interface Page {
+  page: string;
+  setPage: Dispatch<SetStateAction<string>>;
+}
+
+interface PageType {
+  type: "Home" | "Movies" | "TV Series" | "Bookmarked" | "Search";
+}
+
 const Home = () => {
+  const [data, setData] = useState(Data);
+  const [page, setPage] = useState("Home");
+
   return (
     <div className="flex flex-col lg:flex-row ">
-      <div className="  ">
-        <Navbar />
-      </div>
+      <Navbar page={page} setPage={setPage} />
       <div className="lg:max-w-[86vw]">
-        <div className="w-screen  ">{/* <Search /> */}</div>
-        <TrendingRow Data={Data} />
-        <Rows Data={Data} />
+        {page === "Home" && <HomePage Data={Data} />}
+        {page === "Movies" && <MoviePage Data={Data} />}
+        {page === "TV Series" && <TvSeriesPage Data={Data} />}
       </div>
     </div>
   );
