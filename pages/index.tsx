@@ -44,4 +44,7 @@ const Home = () => {
 
 export default Home;
 
+export const getServerSideProps = async () => {
+  const collectionRef = collection(db, "shows");
+};
 //From Data.json
