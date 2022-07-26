@@ -1,6 +1,9 @@
+import useAuth from "../hooks/useAuth";
 import { Page } from "../pages/index";
 
 function Navbar({ page, setPage }: Page) {
+  const { logout } = useAuth();
+
   return (
     <div className=" flex  p-[16px] justify-between   items-center bg-[rgb(22,29,47)] md:m-6 md:p-6 md:rounded-xl lg:h-screen    lg:m-[32px] lg:p-[28px] lg:w-[7vw] lg:min-w-[96px] lg:max-w-[120px] lg:flex-col  lg:rounded-[20px]">
       <a href="/">
@@ -41,6 +44,9 @@ function Navbar({ page, setPage }: Page) {
         className="cursor-pointer h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10"
         src="../image-avatar.png"
         alt=""
+        onClick={() => {
+          logout();
+        }}
       />
     </div>
   );

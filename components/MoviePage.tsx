@@ -8,7 +8,7 @@ function MoviePage({ Data }: Props) {
   return (
     <div className="mt-6 m-5 font-light gap-4 flex flex-col md:gap-6 md:mt-10 md:m-6">
       <h1 className="text-xl tracking-[-0.31px] md:text-3xl md:tracking-[-0.5px] lg:text-[32px]">
-        Movies
+        Movie
       </h1>
       <div className="grid grid-cols-2  gap-6 md:grid-cols-3 lg:grid-cols-4">
         {filteredMovie.map((movie) => {

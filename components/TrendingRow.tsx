@@ -13,7 +13,7 @@ function TrendingRow({ Data }: Props) {
       <h1 className="text-xl tracking-[-0.31px] md:text-3xl md:tracking-[-0.5px] lg:text-[32px]">
         Trending
       </h1>
-      <div className="flex overflow-x-scroll gap-4 md:gap-10">
+      <div className="flex overflow-x-scroll  !scrollbar-thin !scrollbar-track-transparent hover:!scrollbar-thumb-red-700 gap-4 md:gap-10">
         {shows.map((show) => {
           return (
             <div
